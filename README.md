@@ -1,16 +1,26 @@
-## Hi there 👋
+## <3
+```rust
+fn hey_there() -> String {
+    let binary_string = "01101000 01101001 00101100 00100000 01101001 01110100 01110011 00100000
+        01110011 01100101 01101100 01101001 01101110 00101110 00100000 01101001 
+        01101101 00100000 01110011 01110101 01110010 01100101 00100000 01111001 
+        01101111 01110101 00100000 01100011 01100001 01101110 00100000 01100110 
+        01101001 01101110 01100100 00100000 01100001 00100000 01110111 01100001 
+        01111001 00100000 01110100 01101111 00100000 01100011 01101111 01101110 
+        01110100 01100001 01100011 01110100 00100000 01101101 01100101 00101100 
+        00100000 01101001 01100110 00100000 01111001 01101111 01110101 00100000 
+        01110010 01100101 01100001 01101100 01101100 01111001 00100000 01110111 
+        01100001 01101110 01110100 00100000 01110100 01101111 00101110 00100000 
+        01110000 01100101 01100001 01100011 01100101 00101110";
 
-<!--
-**wertylin/wertylin** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+    binary_string
+        .split_whitespace()
+        .map(|b| u8::from_str_radix(b, 2).unwrap() as char)
+        .collect()
+}
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+fn main() {
+    let decrypted_message = hey_there();
+    println!("{}", decrypted_message);
+}
+```
